@@ -1,0 +1,234 @@
+"""
+═══════════════════════════════════════════════════════════════════════════════
+                    CERTIFICATE COORDINATE SYSTEM GUIDE
+═══════════════════════════════════════════════════════════════════════════════
+
+Understanding the Coordinate System:
+────────────────────────────────────────────────────────────────────────────────
+
+All coordinates use RELATIVE values from 0.0 to 1.0:
+  • 0.0 = Start (Left for X, Top for Y)
+  • 0.5 = Center
+  • 1.0 = End (Right for X, Bottom for Y)
+
+
+VISUAL REPRESENTATION:
+────────────────────────────────────────────────────────────────────────────────
+
+X-Axis (Horizontal):
+0.0          0.25         0.50         0.75         1.0
+│────────────│────────────│────────────│────────────│
+Left      Quarter     Center      Quarter      Right
+
+
+Y-Axis (Vertical):
+│
+│
+0.25 ───────────────────────────────────────────────── Quarter from top
+│
+│
+0.50 ───────────────────────────────────────────────── Center
+│
+│
+0.75 ───────────────────────────────────────────────── Quarter from bottom
+│
+│
+1.0 ─────────────────────────────────────────────────── Bottom
+
+
+CERTIFICATE TEMPLATE WITH ZONES:
+────────────────────────────────────────────────────────────────────────────────
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│  0.0                    CERTIFICATE TEMPLATE                          1.0 │
+│                                                                            │
+│  0.25 ┌──────────────────────────────────────────────────────────┐       │
+│       │                                                           │       │
+│       │                 ┌─────────────────────┐                  │       │
+│  0.35 │                 │   ZONE 2 (UPPER)    │ ← y: [0.35-0.45] │       │
+│       │                 │   Priority: 2       │                  │       │
+│  0.45 │                 └─────────────────────┘                  │       │
+│       │                 ┌─────────────────────┐                  │       │
+│       │                 │  ZONE 1 (MIDDLE)    │ ← y: [0.45-0.60] │       │
+│  0.50 │                 │   "John Smith"      │   (DEFAULT)      │       │
+│       │                 │   Priority: 1       │                  │       │
+│  0.60 │                 └─────────────────────┘                  │       │
+│       │                 ┌─────────────────────┐                  │       │
+│       │                 │   ZONE 3 (LOWER)    │ ← y: [0.55-0.65] │       │
+│  0.65 │                 │   Priority: 3       │                  │       │
+│       │                 └─────────────────────┘                  │       │
+│       │                                                           │       │
+│  0.75 └──────────────────────────────────────────────────────────┘       │
+│                                                                            │
+│  1.0                                                                       │
+└───────────────────────────────────────────────────────────────────────────┘
+       0.25                                                           0.75
+       ↑                                                               ↑
+   x_range[0]                                                     x_range[1]
+
+
+ZONE DEFINITIONS:
+────────────────────────────────────────────────────────────────────────────────
+
+Zone 1 - CENTER MIDDLE (Default, Priority 1):
+  x_range: [0.25, 0.75]  → Centered horizontally, 50% width
+  y_range: [0.45, 0.60]  → Slightly below center
+  Use for: Standard certificates, names as focal point
+
+Zone 2 - CENTER UPPER (Priority 2):
+  x_range: [0.25, 0.75]  → Centered horizontally, 50% width
+  y_range: [0.35, 0.45]  → Upper portion
+  Use for: Certificates with text/signatures below
+
+Zone 3 - CENTER LOWER (Priority 3):
+  x_range: [0.25, 0.75]  → Centered horizontally, 50% width
+  y_range: [0.55, 0.65]  → Lower portion
+  Use for: Certificates with headers above
+
+
+COMMON ADJUSTMENTS:
+────────────────────────────────────────────────────────────────────────────────
+
+Move Text UP:
+  Before: "y_range": [0.45, 0.60]
+  After:  "y_range": [0.35, 0.50]  ← Decreased by 0.10
+
+Move Text DOWN:
+  Before: "y_range": [0.45, 0.60]
+  After:  "y_range": [0.55, 0.70]  ← Increased by 0.10
+
+Move Text LEFT:
+  Before: "x_range": [0.25, 0.75]
+  After:  "x_range": [0.15, 0.65]  ← Decreased by 0.10
+
+Move Text RIGHT:
+  Before: "x_range": [0.25, 0.75]
+  After:  "x_range": [0.35, 0.85]  ← Increased by 0.10
+
+Make Zone NARROWER (more precise):
+  Before: "x_range": [0.25, 0.75]  (50% width)
+  After:  "x_range": [0.35, 0.65]  (30% width)
+
+Make Zone WIDER (more flexible):
+  Before: "x_range": [0.25, 0.75]  (50% width)
+  After:  "x_range": [0.15, 0.85]  (70% width)
+
+
+PIXEL TO RELATIVE CONVERSION:
+────────────────────────────────────────────────────────────────────────────────
+
+Formula:
+  relative_x = pixel_x / image_width
+  relative_y = pixel_y / image_height
+
+Example (Certificate: 2000px × 1500px):
+  Desired position: (1000px, 750px)
+  
+  Calculation:
+    x = 1000 / 2000 = 0.50 (center)
+    y = 750 / 1500 = 0.50 (center)
+  
+  Configuration:
+    "x_range": [0.45, 0.55]  ← ±0.05 around 0.50
+    "y_range": [0.45, 0.55]  ← ±0.05 around 0.50
+
+
+REAL-WORLD EXAMPLES:
+────────────────────────────────────────────────────────────────────────────────
+
+Example 1: "This is to certify that [NAME] has completed..."
+  Text at: 40% from top
+  Config:  "y_range": [0.38, 0.48]
+
+Example 2: Name below "CERTIFICATE OF ACHIEVEMENT" header
+  Header at: 30% from top
+  Name at: 40% from top
+  Config: "y_range": [0.38, 0.48]
+
+Example 3: Name above signature line at bottom
+  Signature at: 75% from top
+  Name at: 65% from top
+  Config: "y_range": [0.60, 0.70]
+
+Example 4: Left-aligned name (like a form)
+  Config: "x_range": [0.15, 0.50]
+
+Example 5: Right-aligned name
+  Config: "x_range": [0.50, 0.85]
+
+
+HUMANIZATION SETTINGS:
+────────────────────────────────────────────────────────────────────────────────
+
+Natural Variations (Recommended):
+  "humanize_offset": true
+  "offset_range": [-5, 5]
+  Result: Each certificate unique, ±5 pixels variation
+
+Subtle Variations:
+  "humanize_offset": true
+  "offset_range": [-2, 2]
+  Result: Slight differences, ±2 pixels variation
+
+Exact Placement:
+  "humanize_offset": false
+  "offset_range": [0, 0]
+  Result: All certificates identical
+
+Strong Variations:
+  "humanize_offset": true
+  "offset_range": [-10, 10]
+  Result: More noticeable differences, ±10 pixels
+
+
+FONT SIZE ADAPTATION:
+────────────────────────────────────────────────────────────────────────────────
+
+Default: "font_size_range": [60, 90]
+
+Name Length → Font Size:
+  ≤ 10 chars  → 90px (max)      Example: "John Doe"
+  11-15 chars → 75px (-30%)     Example: "Alexander Smith"
+  16-20 chars → 65px (-60%)     Example: "Dr. Christopher Lee"
+  > 20 chars  → 60px (min)      Example: "Prof. Alexander Hamilton III"
+
+Plus random variation: ±2px for natural look
+
+
+PRIORITY SYSTEM:
+────────────────────────────────────────────────────────────────────────────────
+
+How it works:
+  Score = Image_Variance × Priority_Number
+  
+  Lower score = Better zone (selected)
+
+Example:
+  Zone 1: variance=100, priority=1 → score=100 ✓ SELECTED
+  Zone 2: variance=80,  priority=2 → score=160
+  Zone 3: variance=90,  priority=3 → score=270
+
+The system automatically picks the zone with the lowest score!
+
+
+QUICK REFERENCE TABLE:
+────────────────────────────────────────────────────────────────────────────────
+
+Position          | x_range        | y_range        | Description
+──────────────────|────────────────|────────────────|─────────────────────
+Exact Center      | [0.45, 0.55]   | [0.45, 0.55]   | Dead center
+Upper Center      | [0.25, 0.75]   | [0.30, 0.45]   | Top third
+Lower Center      | [0.25, 0.75]   | [0.55, 0.70]   | Bottom third
+Left Aligned      | [0.15, 0.50]   | [0.45, 0.60]   | Left side
+Right Aligned     | [0.50, 0.85]   | [0.45, 0.60]   | Right side
+Upper Left        | [0.15, 0.50]   | [0.30, 0.45]   | Top-left quadrant
+Upper Right       | [0.50, 0.85]   | [0.30, 0.45]   | Top-right quadrant
+Lower Left        | [0.15, 0.50]   | [0.55, 0.70]   | Bottom-left quadrant
+Lower Right       | [0.50, 0.85]   | [0.55, 0.70]   | Bottom-right quadrant
+Full Width Center | [0.10, 0.90]   | [0.45, 0.60]   | Wide, centered
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                              END OF GUIDE
+═══════════════════════════════════════════════════════════════════════════════
+"""

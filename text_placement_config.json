@@ -1,0 +1,52 @@
+{
+    "text_zones": [
+        {
+            "name": "center_middle",
+            "x_range": [
+                0.25,
+                0.75
+            ],
+            "y_range": [
+                0.45,
+                0.6
+            ],
+            "priority": 1,
+            "description": "Standard center placement for most certificates"
+        },
+        {
+            "name": "center_upper",
+            "x_range": [
+                0.25,
+                0.75
+            ],
+            "y_range": [
+                0.35,
+                0.45
+            ],
+            "priority": 2,
+            "description": "Upper center for certificates with bottom text"
+        },
+        {
+            "name": "center_lower",
+            "x_range": [
+                0.25,
+                0.75
+            ],
+            "y_range": [
+                0.55,
+                0.65
+            ],
+            "priority": 3,
+            "description": "Lower center for certificates with header text"
+        }
+    ],
+    "font_size_range": [
+        60,
+        90
+    ],
+    "humanize_offset": true,
+    "offset_range": [
+        -5,
+        5
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "text_zones": [
+        {
+            "name": "center_middle",
+            "x_range": [0.25, 0.75],
+            "y_range": [0.45, 0.60],
+            "priority": 1,
+            "description": "Standard center placement for most certificates"
+        },
+        {
+            "name": "center_upper",
+            "x_range": [0.25, 0.75],
+            "y_range": [0.35, 0.45],
+            "priority": 2,
+            "description": "Upper center for certificates with bottom text"
+        },
+        {
+            "name": "center_lower",
+            "x_range": [0.25, 0.75],
+            "y_range": [0.55, 0.65],
+            "priority": 3,
+            "description": "Lower center for certificates with header text"
+        }
+    ],
+    "font_size_range": [60, 90],
+    "humanize_offset": true,
+    "offset_range": [-5, 5],
+    "_comments": {
+        "coordinate_system": "All coordinates are relative (0.0 to 1.0)",
+        "x_range": "Horizontal position - [left_edge, right_edge]",
+        "y_range": "Vertical position - [top_edge, bottom_edge]",
+        "priority": "Lower number = higher priority (1 is highest)",
+        "font_size_range": "[minimum_size, maximum_size] in pixels",
+        "humanize_offset": "true = natural variations, false = exact placement",
+        "offset_range": "Random offset in pixels [-max, +max]",
+        "examples": {
+            "move_up": "Decrease y_range values (e.g., [0.35, 0.50])",
+            "move_down": "Increase y_range values (e.g., [0.55, 0.70])",
+            "move_left": "Decrease x_range values (e.g., [0.15, 0.60])",
+            "move_right": "Increase x_range values (e.g., [0.40, 0.85])",
+            "exact_center": "Use narrow ranges (e.g., [0.48, 0.52])",
+            "flexible_placement": "Use wide ranges (e.g., [0.20, 0.80])"
+        }
+    }
+}
