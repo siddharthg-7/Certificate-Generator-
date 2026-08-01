@@ -12,7 +12,7 @@
 
 ---
 
-## 🌟 Why This Project?
+## Why This Project?
 
 If you've ever organized a hackathon, college workshop, or society competition, you know the grueling post-event chore: spending hours manually typing participant names into design software, exporting files one by one, and struggling with inconsistent alignments. 
 
@@ -22,25 +22,25 @@ Unlike primitive scripts that stamp rigid, robotic text onto an image, our **Ult
 
 ---
 
-## 🔥 Key Features (Ultra-Realistic Edition)
+##  Key Features (Ultra-Realistic Edition)
 
-### 🧠 1. Intelligent & Adaptive Placement
+###  1. Intelligent & Adaptive Placement
 - **Automatic Zone Detection:** Smartly scans the contrast and layout of your certificate template (`.png`) to identify optimal text placement areas.
 - **Dynamic Font Sizing:** Dealing with a long name like *"Alexander Hamilton"* or a short name like *"Lee"*? The rendering engine dynamically recalculates font scaling and kerning to prevent awkward wrapping and overflows.
 - **Inline Text Support:** Seamlessly embeds names inside descriptive sentences or structured paragraphs (e.g., *"This is proudly presented to `[NAME]` for outstanding contribution..."*).
 
-### 🎨 2. Humanized Generation
+###  2. Humanized Generation
 - **Natural Spatial Variations:** Applies micro-offsets (±5 pixels) to emulate natural, organic positioning so that no two certificates share identical mathematical alignments.
 - **Realistic Aesthetic Assurance:** Designed specifically to eliminate the "machine-generated" look, ensuring formal and professional output every time.
 
-### ⚡ 3. Effortless Execution
+###  3. Effortless Execution
 - **Zero-Config Dependency Installer:** Run the script once, and it will automatically invoke `pip` in the background to set up essential libraries (`openpyxl`, `Pillow`, `img2pdf`). No manual virtual environment hassle!
 - **Interactive File Picker:** Features a smooth native GUI dialog to browse and choose your `.xlsx` roster without tampering with code paths.
 - **Dual-Format Compilation:** Concurretly outputs lossless raster graphics (`.png`) and publication-grade vector documents (`.pdf`) for versatile delivery via email or messaging platforms.
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 | Component | Technology | Role & Description |
 | :--- | :--- | :--- |
@@ -52,12 +52,12 @@ Unlike primitive scripts that stamp rigid, robotic text onto an image, our **Ult
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
-### 📋 Prerequisites
+###  Prerequisites
 All you need installed on your machine is **Python 3.8+**. The script natively resolves and installs all third-party dependencies automatically upon initiation!
 
-### ⚙️ Quick Setup Guide
+###  Quick Setup Guide
 1. **Clone the Repository** (or download the ZIP bundle):
    ```bash
    git clone https://github.com/siddharthg-7/Certificate-Generator-.git
@@ -76,11 +76,11 @@ All you need installed on your machine is **Python 3.8+**. The script natively r
 
 ---
 
-## 📐 Customizing Text Placement
+##  Customizing Text Placement
 
 On first execution, the generator outputs an easily editable `text_placement_config.json` file. You can customize spatial bounding boxes and zones to effortlessly fit any layout style.
 
-### 📌 Common Layout Scenarios
+###  Common Layout Scenarios
 
 | Placement Layout | Target Use Case | Example JSON Configuration |
 | :--- | :--- | :--- |
@@ -88,11 +88,11 @@ On first execution, the generator outputs an easily editable `text_placement_con
 | **Below Header Banner** | Centering names under large "Certificate of Participation" headers | `"y_range": [0.35, 0.45]` |
 | **Above Signatory Line** | Positioning formal titles right above footer signatures | `"y_range": [0.55, 0.68]` |
 
-> 💡 **Pro-Tip:** Review our **[QUICK_SETUP.md](QUICK_SETUP.md)** for ready-to-use configuration presets and our **[VISUAL_GUIDE.txt](VISUAL_GUIDE.txt)** for an ASCII breakdown of the normalized `0.0`–`1.0` grid system!
+>  **Pro-Tip:** Review our **[QUICK_SETUP.md](QUICK_SETUP.md)** for ready-to-use configuration presets and our **[VISUAL_GUIDE.txt](VISUAL_GUIDE.txt)** for an ASCII breakdown of the normalized `0.0`–`1.0` grid system!
 
 ---
 
-## 💻 Sample Console Output
+##  Sample Console Output
 
 Here is what running a high-speed batch generation looks like in your terminal:
 
@@ -107,24 +107,24 @@ $ python certificates.py
  ✔ Row 5: Alexander Hamilton            → Zone: center_middle (Compiled PNG & PDF)
 
 =======================================================
- 🎉 Success! Generated 25 certificates in 3.12 seconds.
- 📁 Location: C:\project-self-1\Output\
+  Success! Generated 25 certificates in 3.12 seconds.
+ Location: C:\project-self-1\Output\
 =======================================================
 ```
 
 ---
 
-## 📚 Documentation & Roadmap
+##  Documentation & Roadmap
 
 We are continuously pushing the architecture of this utility forward into a full-scale verification platform:
 
-- 📖 **[Quick Setup Guide (QUICK_SETUP.md)](QUICK_SETUP.md)**: Common placement layouts and configuration recipes.
-- 📐 **[Coordinate Grid Reference (VISUAL_GUIDE.txt)](VISUAL_GUIDE.txt)**: Deep dive into relative spatial bounding boxes and geometry.
-- 🗺️ **[Architectural Roadmap (FUTURE_WORKS.md)](FUTURE_WORKS.md)**: Our engineering roadmap toward developing a full-stack dashboard and cryptographic QR code anti-forgery database.
+-  **[Quick Setup Guide (QUICK_SETUP.md)](QUICK_SETUP.md)**: Common placement layouts and configuration recipes.
+-  **[Coordinate Grid Reference (VISUAL_GUIDE.txt)](VISUAL_GUIDE.txt)**: Deep dive into relative spatial bounding boxes and geometry.
+-  **[Architectural Roadmap (FUTURE_WORKS.md)](FUTURE_WORKS.md)**: Our engineering roadmap toward developing a full-stack dashboard and cryptographic QR code anti-forgery database.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We warmly welcome ideas, feature suggestions, and pull requests from student societies, college clubs, and developers worldwide!
 1. Fork the Project
@@ -136,6 +136,6 @@ We warmly welcome ideas, feature suggestions, and pull requests from student soc
 ---
 
 <div align="center">
-  <p><b>Designed & Engineered for College Clubs, Tech Societies, and Open Source Hackers ❤️</b></p>
-  <p>⭐ Star this repository if it saved your weekend!</p>
+  <p><b>Designed & Engineered for College Clubs, Tech Societies, and Open Source Hackers </b></p>
+  <p> Star this repository if it saved your weekend!</p>
 </div>
