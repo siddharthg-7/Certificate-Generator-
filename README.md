@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🎓 Automated Certificate Generator</h1>
+  <h1> Automated Certificate Generator</h1>
   <p><b>An intelligent, ultra-realistic certificate generation engine designed for college clubs, technical events, and student communities.</b></p>
 
   <p>
@@ -18,7 +18,7 @@ If you've ever organized a hackathon, college workshop, or society competition, 
 
 We built **Certificates Generator** to automate this entire workflow. In just a few seconds, it transforms an ordinary Excel roster into high-resolution, perfectly aligned **PNGs and high-DPI PDFs**—ready for instant distribution. 
 
-Unlike primitive scripts that stamp rigid, robotic text onto an image, our **Ultra-Realistic Edition** leverages intelligent zone positioning, natural spatial variation, and adaptive typography. The result? **Certificates that look authentically hand-crafted by a graphic designer.** 🎨✨
+Unlike primitive scripts that stamp rigid, robotic text onto an image, our **Ultra-Realistic Edition** leverages intelligent zone positioning, natural spatial variation, and adaptive typography. The result? **Certificates that look authentically hand-crafted by a graphic designer.** 
 
 ---
 
