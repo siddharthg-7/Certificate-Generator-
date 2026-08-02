@@ -3,7 +3,7 @@
   <p><b>An intelligent, ultra-realistic certificate generation engine designed for college clubs, technical events, and student communities.</b></p>
 
   <p>
-    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Version"/></a>
+    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white" alt="Python Version"/></a>
     <a href="https://python-pillow.org/"><img src="https://img.shields.io/badge/Pillow-Image%20Processing-0078D4?style=for-the-badge&logo=python&logoColor=white" alt="Pillow"/></a>
     <a href="https://github.com/siddharthg-7/Certificate-Generator-/stargazers"><img src="https://img.shields.io/badge/PRs-Welcome-28A745?style=for-the-badge&logo=github&logoColor=white" alt="PRs Welcome"/></a>
     <a href="https://github.com/siddharthg-7/Certificate-Generator-/blob/main/README.md"><img src="https://img.shields.io/badge/Maintained%3F-yes-6c5ce7?style=for-the-badge" alt="Maintained"/></a>
